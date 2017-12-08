@@ -1,8 +1,8 @@
 name:   boa
 version:        "0.1"
-summary:        Blade of Agony
+summary:        Wolfendoom - Blade of Agony
 description:    |
-        A complete DOOM mod which in the Wolfenstein style.
+        A complete DOOM mod in the Wolfenstein style.
 confinement:    strict
 grade: stable
 

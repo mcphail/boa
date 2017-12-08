@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Blade of Agony
 Exec=boa
-Comment=Blade of Agony
+Comment=WolfenDoom: Blade of Agony
+Keywords=boa;wolfendoom;doom;gzdoom
 Type=Application
 Icon=${SNAP}/boa.png
 StartupNotify=true
