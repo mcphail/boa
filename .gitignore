@@ -1,0 +1,14 @@
+*.snap
+*source.tar.bz2
+*.in
+*.m4
+autom4te.cache/
+compile
+configure
+depcomp
+install-sh
+missing
+parts/
+prime/
+stage/
+/snap/.snapcraft/

@@ -1,0 +1,77 @@
+name:   boa
+version:        "0.1"
+summary:        Blade of Agony
+description:    |
+        A complete DOOM mod which in the Wolfenstein style.
+confinement:    strict
+grade: stable
+
+apps:
+        boa:
+                command: launcher
+                plugs:  [unity7, pulseaudio, opengl, network]
+
+parts:
+        gzdoom:
+                plugin: cmake
+                source: git://github.com/coelckers/gzdoom.git
+                source-depth: 1
+                configflags:
+                        - -DNO_FMOD=ON
+                build-packages:
+                        - g++
+                        - make
+                        - cmake
+                        - libsdl2-dev
+                        - zlib1g-dev
+                        - libbz2-dev
+                        - libjpeg-dev
+                        - libfluidsynth-dev
+                        - libgme-dev
+                        - libopenal-dev
+                        - libmpg123-dev
+                        - libsndfile1-dev
+                        - libwildmidi-dev
+                        - libgtk-3-dev
+                        - timidity
+                        - nasm
+                        - libgl1-mesa-dev
+                        - tar
+                        - libsdl1.2-dev
+                        - libglew-dev
+                stage-packages:
+                        - libsdl2-2.0-0
+                        - libopenal1
+                        - libfluidsynth1
+                        - libgme0
+                        - libmpg123-0
+                        - libsndfile1
+                        - libwildmidi1
+                        - libgtk-3-0
+                        - timidity
+                        - libsdl1.2debian
+                        - libgl1-mesa-glx
+        iwad:
+                plugin: nil
+                stage-packages:
+                        - freedoom
+                prime:
+                        - usr/share/games/doom/freedoom2.wad
+        mod:
+                plugin: nil
+                source: https://github.com/Realm667/WolfenDoom.git
+                source-depth: 1
+                build-packages:
+                        - p7zip-full
+                build: |
+                        7z a -tzip -mmt=on -mm=LZMA -mx=9 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' wolf_boa.pk3 *
+                install: |
+                        cp wolf_boa.pk3 *.txt $SNAPCRAFT_PART_INSTALL
+        launch:
+                plugin: dump
+                source: launcher
+                prime:
+                        - -share
+                        - -usr/share/doc
+                        - -usr/share/lintian
+                        - -usr/share/man

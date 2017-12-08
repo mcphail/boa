@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Blade of Agony
+Exec=boa
+Comment=Blade of Agony
+Type=Application
+Icon=${SNAP}/boa.png
+StartupNotify=true
