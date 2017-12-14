@@ -1,5 +1,5 @@
 name:   boa
-version:        "0.2-2017121300"
+version:        "0.2-2017121400"
 summary:        Wolfendoom - Blade of Agony
 description:    |
         A complete DOOM mod in the Wolfenstein style.
@@ -9,7 +9,7 @@ grade: stable
 apps:
         boa:
                 command: launcher
-                plugs:  [unity7, pulseaudio, opengl, network]
+                plugs:  [unity7, pulseaudio, opengl, network, joystick]
 
 parts:
         gzdoom:
