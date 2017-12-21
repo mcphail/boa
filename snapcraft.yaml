@@ -1,5 +1,5 @@
 name:   boa
-version:        "0.3"
+version:        "0.3-2017122100"
 summary:        Wolfendoom - Blade of Agony
 description:    |
         A complete DOOM mod in the Wolfenstein style.
@@ -15,7 +15,7 @@ parts:
         gzdoom:
                 plugin: cmake
                 source: git://github.com/mcphail/gzdoom.git
-                source-depth: 1
+                source-depth: 2
                 source-branch: stop_fail_on_fixed_paths
                 configflags:
                         - -DNO_FMOD=ON
