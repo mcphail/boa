@@ -3,7 +3,7 @@
 set -e
 
 GAMEDIR=$SNAP_USER_COMMON/saves_and_config
-OLDGAMEDIR=$SNAP_USER_DATA/saves_and_config
+FLAGDIR=$SNAP_USER_DATA/flags
 
 if [ "$SNAP_ARCH" == "amd64" ]; then
   ARCH="x86_64-linux-gnu"
@@ -68,24 +68,16 @@ then
   echo "Game directory doesn't exist"
   echo "Creating directory"
   mkdir -p $GAMEDIR
-  if [ -d $OLDGAMEDIR ];
+  mkdir -p $FLAGDIR
+  touch $FLAGDIR/accept_incompatible_saves
+else
+  if [ ! -f $FLAGDIR/accept_incompatible_saves ]
   then
-    echo "Old game directory exists at $OLDGAMEDIR"
-    if [ ! -f $OLDGAMEDIR/FILES_HAVE_MOVED ];
-    then
-      echo "Moving files to new directory to prevent problems on automatic updates"
-      cp $OLDGAMEDIR/* $GAMEDIR
-      cat > $OLDGAMEDIR/FILES_HAVE_MOVED << EOF
-The files in this directory are no longer used by Blade of Agony. The working
-versions are in $GAMEDIR .
-
-Feel free to delete these files and the $OLDGAMEDIR directory.
-EOF
-    else
-      echo "Old game files are ignored. Using $GAMEDIR instead"
-    fi
+    guiluurve regression
+    mkdir -p $FLAGDIR
+    touch $FLAGDIR/accept_incompatible_saves
   fi
 fi
 
 cd ${SNAP}/share/games/doom
-${SNAP}/bin/gzdoom -iwad ${SNAP}/usr/share/games/doom/freedoom2.wad -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR} -file ${SNAP}/wolf_boa.pk3
+${SNAP}/bin/gzdoom -iwad ${SNAP}/wolf_boa.pk3 -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR}

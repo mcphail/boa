@@ -1,5 +1,5 @@
 name:   boa
-version:        "0.5pre"
+version:        "c2-release"
 summary:        Wolfendoom - Blade of Agony
 description:    |
         A complete DOOM mod in the Wolfenstein style.
@@ -14,7 +14,8 @@ apps:
 parts:
         gzdoom:
                 plugin: cmake
-                source: git://github.com/coelckers/gzdoom.git
+                source: git://github.com/mcphail/gzdoom.git
+                source-branch: stop_fail_on_fixed_paths
                 configflags:
                         - -DNO_FMOD=ON
                 build-packages:
@@ -50,17 +51,10 @@ parts:
                         - timidity
                         - libsdl1.2debian
                         - libgl1-mesa-glx
-        iwad:
-                plugin: nil
-                stage-packages:
-                        - freedoom
-                prime:
-                        - usr/share/games/doom/freedoom2.wad
-                        - usr/share/doc/freedoom/copyright
         mod:
                 plugin: nil
                 source: https://github.com/Realm667/WolfenDoom.git
-                source-depth: 1
+                source-tag: c2-release
                 build-packages:
                         - p7zip-full
                 build: |
@@ -75,3 +69,24 @@ parts:
                         - -usr/share/doc
                         - -usr/share/lintian
                         - -usr/share/man
+        sdlgui:
+                plugin: autotools
+                source-type: tar
+                source: https://www.libsdl.org/projects/GUIlib/src/GUIlib-1.2.1.tar.gz
+                configflags: [--prefix=/usr]
+                build-packages:
+                        - gcc
+                        - g++
+                        - make
+                        - libsdl1.2-dev
+        gui:
+                after: [sdlgui]
+                plugin: autotools
+                source: guisrc
+                configflags: [--prefix=/usr]
+                build-packages:
+                        - gcc
+                        - make
+                        - libsdl1.2-dev
+                stage-packages:
+                        - libsdl1.2debian
