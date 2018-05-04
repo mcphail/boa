@@ -8,8 +8,8 @@ grade: stable
 
 apps:
         boa:
-                command: launcher
-                plugs:  [unity7, pulseaudio, opengl, network, joystick]
+                command: desktop-launch $SNAP/launcher
+                plugs:  [desktop, desktop-legacy, unity7, pulseaudio, opengl, network, joystick]
 
 parts:
         gzdoom:
@@ -64,6 +64,7 @@ parts:
         launch:
                 plugin: dump
                 source: launcher
+                after: [ desktop-glib-only ]
                 prime:
                         - -share
                         - -usr/share/doc
