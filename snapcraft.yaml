@@ -57,9 +57,8 @@ parts:
                 source-tag: c2-release
                 build-packages:
                         - p7zip-full
-                build: |
+                override-build: |
                         7z a -tzip -mmt=on -mm=LZMA -mx=9 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' wolf_boa.pk3 *
-                install: |
                         cp wolf_boa.pk3 *.txt $SNAPCRAFT_PART_INSTALL
         launch:
                 plugin: dump
@@ -70,24 +69,3 @@ parts:
                         - -usr/share/doc
                         - -usr/share/lintian
                         - -usr/share/man
-        sdlgui:
-                plugin: autotools
-                source-type: tar
-                source: https://www.libsdl.org/projects/GUIlib/src/GUIlib-1.2.1.tar.gz
-                configflags: [--prefix=/usr]
-                build-packages:
-                        - gcc
-                        - g++
-                        - make
-                        - libsdl1.2-dev
-        gui:
-                after: [sdlgui]
-                plugin: autotools
-                source: guisrc
-                configflags: [--prefix=/usr]
-                build-packages:
-                        - gcc
-                        - make
-                        - libsdl1.2-dev
-                stage-packages:
-                        - libsdl1.2debian

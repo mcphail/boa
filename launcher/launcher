@@ -10,14 +10,6 @@ then
   echo "Creating directory"
   mkdir -p $GAMEDIR
   mkdir -p $FLAGDIR
-  touch $FLAGDIR/accept_incompatible_saves
-else
-  if [ ! -f $FLAGDIR/accept_incompatible_saves ]
-  then
-    guiluurve regression
-    mkdir -p $FLAGDIR
-    touch $FLAGDIR/accept_incompatible_saves
-  fi
 fi
 
 cd ${SNAP}/share/games/doom
