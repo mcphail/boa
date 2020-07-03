@@ -16,7 +16,7 @@ apps:
 parts:
   gzdoom:
     plugin: cmake
-    source: git://guthub.com/coelckers/gzdoom.git
+    source: git://github.com/coelckers/gzdoom.git
     source-tag: g4.4.2
     configflags:
       - -DNO_FMOD=ON
