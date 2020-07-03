@@ -16,6 +16,7 @@ apps:
 parts:
   gzdoom:
     plugin: cmake
+    after: [zmusic]
     source: git://github.com/coelckers/gzdoom.git
     source-tag: g4.4.2
     configflags:
@@ -53,6 +54,19 @@ parts:
       - libwildmidi2
       - timidity
       - libgl1-mesa-glx
+
+  zmusic:
+    plugin: cmake
+    source: https://github.com/coelckers/ZMusic.git
+    build-packages:
+      - g++
+      - libfluidsynth-dev
+      - libgme-dev
+      - libopenal-dev
+      - libmpg123-dev
+      - libsndfile1-dev
+      - libwildmidi-dev
+      - timidity
 
   mod:
     plugin: nil
