@@ -2,15 +2,13 @@
 
 set -e
 
-GAMEDIR=$SNAP_USER_COMMON/saves_and_config
-FLAGDIR=$SNAP_USER_DATA/flags
+GAMEDIR=$SNAP_USER_DATA/saves_and_config
 if [ ! -d $GAMEDIR ];
 then
   echo "Game directory doesn't exist"
   echo "Creating directory"
   mkdir -p $GAMEDIR
-  mkdir -p $FLAGDIR
 fi
 
 cd ${SNAP}/share/games/doom
-${SNAP}/bin/gzdoom -iwad ${SNAP}/wolf_boa.pk3 -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR}
+${SNAP}/bin/gzdoom -iwad ${SNAP}/usr/share/games/doom/freedoom2.wad -file ${SNAP}/wolf_boa.pk3 -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR}

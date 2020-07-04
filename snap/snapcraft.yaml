@@ -69,6 +69,11 @@ parts:
       - libwildmidi-dev
       - timidity
 
+  iwad:
+    plugin: nil
+    stage-packages: [freedoom]
+    prime: [usr/share/games/doom/freedoom2.wad]
+
   mod:
     plugin: nil
     source: https://github.com/Realm667/WolfenDoom.git
