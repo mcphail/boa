@@ -54,6 +54,7 @@ parts:
       - libwildmidi2
       - timidity
       - libgl1-mesa-glx
+      - libgomp1
 
   zmusic:
     plugin: cmake
