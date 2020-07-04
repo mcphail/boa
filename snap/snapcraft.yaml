@@ -80,7 +80,7 @@ parts:
     build-packages:
       - p7zip-full
     override-build: |
-      7z a -tzip -mmt=on -mm=LZMA -mx=9 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' wolf_boa.pk3 *
+      7z a -tzip -mmt=on -mm=Deflate -mx=5 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' wolf_boa.pk3 *
       cp wolf_boa.pk3 *.txt $SNAPCRAFT_PART_INSTALL
 
   launch:
