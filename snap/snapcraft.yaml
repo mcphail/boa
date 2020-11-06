@@ -28,6 +28,7 @@ parts:
       - cmake
       - libsdl2-dev
       - libudev-dev
+      - libudev1
       - zlib1g-dev
       - libbz2-dev
       - libjpeg-dev
