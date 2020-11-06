@@ -6,6 +6,7 @@ description: |
   A complete DOOM mod in the Wolfenstein style.
 confinement: strict
 grade: stable
+compression: lzo
 
 apps:
   boa:
