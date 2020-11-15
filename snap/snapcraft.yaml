@@ -72,19 +72,14 @@ parts:
       - libwildmidi-dev
       - timidity
 
-  iwad:
-    plugin: nil
-    stage-packages: [freedoom]
-    prime: [usr/share/games/doom/freedoom2.wad]
-
   mod:
     plugin: nil
     source: https://github.com/Realm667/WolfenDoom.git
     build-packages:
       - p7zip-full
     override-build: |
-      7z a -tzip -mmt=on -mm=Deflate -mx=0 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' wolf_boa.pk3 *
-      cp wolf_boa.pk3 *.txt $SNAPCRAFT_PART_INSTALL
+      7z a -tzip -mmt=on -mm=Deflate -mx=0 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' boa.ipk3 *
+      cp boa.ipk3 *.txt $SNAPCRAFT_PART_INSTALL
 
   launch:
     plugin: dump

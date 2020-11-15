@@ -10,5 +10,5 @@ then
   mkdir -p $GAMEDIR
 fi
 
-cd ${SNAP}/share/games/doom
-${SNAP}/bin/gzdoom -iwad ${SNAP}/usr/share/games/doom/freedoom2.wad -file ${SNAP}/wolf_boa.pk3 -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR}
+cd ${SNAP}
+${SNAP}/bin/gzdoom -iwad ${SNAP}/boa.ipk3 -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR}
