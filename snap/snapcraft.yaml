@@ -1,5 +1,5 @@
 name: boa
-base: core18
+base: core20
 version: git
 summary: Wolfendoom - Blade of Agony
 description: |
@@ -12,7 +12,7 @@ apps:
   boa:
     command: launcher
     plugs: [desktop, desktop-legacy, unity7, audio-playback, opengl, network, joystick]
-    extensions: [gnome-3-28]
+    extensions: [gnome-3-38]
 
 parts:
   gzdoom:
@@ -20,7 +20,7 @@ parts:
     after: [zmusic]
     source: git://github.com/coelckers/gzdoom.git
     source-tag: g4.5.0
-    configflags:
+    cmake-parameters:
       - -DNO_FMOD=ON
     build-packages:
       - g++
@@ -48,7 +48,7 @@ parts:
       - libbz2-1.0
       - libjpeg8
       - libjpeg-turbo8
-      - libfluidsynth1
+      - libfluidsynth2
       - fluid-soundfont-gm
       - libgme0
       - libopenal1
@@ -89,12 +89,12 @@ parts:
     after: [launch, mod, gzdoom]
     plugin: nil
     build-snaps:
-      - core18
+      - core20
       - gtk-common-themes
-      - gnome-3-28-1804
+      - gnome-3-38-2004
     override-prime: |
       set -eux
-      for snap in "core18" "gtk-common-themes" "gnome-3-28-1804"; do
+      for snap in "core20" "gtk-common-themes" "gnome-3-38-2004"; do
         cd "/snap/$snap/current" && find . -type f,l -exec rm -r "$SNAPCRAFT_PRIME/{}" \;
       done
 
