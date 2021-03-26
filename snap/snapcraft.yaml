@@ -78,7 +78,7 @@ parts:
     build-packages:
       - p7zip-full
     override-build: |
-      7z a -tzip -mmt=on -mm=Deflate -mx=0 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' boa.ipk3 *
+      7z a -tzip -mmt=on -mm=Deflate -mx=0 -ssc -xr@'tools/7za/7zExcludeList.txt' -x@'tools/7za/7zExcludeListDir.txt' boa.ipk3 *
       cp boa.ipk3 *.txt $SNAPCRAFT_PART_INSTALL
 
   launch:
