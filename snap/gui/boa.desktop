@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Blade of Agony
 Exec=boa
-Comment=WolfenDoom: Blade of Agony
-Keywords=boa;wolfendoom;doom;gzdoom
+Comment=Story-driven FPS inspired by WWII shooters from the 90's and early 2000's
+Keywords=boa;wolfendoom;doom;gzdoom;first;person;shooter
 Type=Application
 Icon=${SNAP}/boa.png
-Categories=Game;
+Categories=Game;ActionGame;
 StartupNotify=true
