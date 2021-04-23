@@ -2,7 +2,7 @@
 Name=Blade of Agony
 Exec=boa
 Comment=Story-driven FPS inspired by WWII shooters from the 90's and early 2000's
-Keywords=boa;wolfendoom;doom;gzdoom;first;person;shooter
+Keywords=boa;wolfendoom;wolfenstein;doom;gzdoom;first;person;shooter
 Type=Application
 Icon=${SNAP}/boa.png
 Categories=Game;ActionGame;
