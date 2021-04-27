@@ -23,10 +23,10 @@ parts:
     cmake-parameters:
       - -DNO_FMOD=ON
       - -DCMAKE_BUILD_TYPE=Release
-    override-build: |
+    override-pull: |
+      snapcraftctl pull
       git cherry-pick df4f41f4e8d9b1d0372b6e814bb1a0c091a59f23
       git cherry-pick d813425a8db6066cc14e3c4bb6668e0edb0af443
-      snapcraftctl build
     build-packages:
       - g++
       - make
