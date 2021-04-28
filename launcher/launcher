@@ -10,5 +10,5 @@ then
   mkdir -p $GAMEDIR
 fi
 
-cd ${SNAP}/usr/local/share/games/doom
-${SNAP}/usr/local/bin/gzdoom -iwad ${SNAP}/boa.ipk3 -file lights.pk3 brightmaps.pk3 game_widescreen_gfx.pk3 -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR}
+cd ${SNAP}/share/games/doom
+${SNAP}/bin/gzdoom -iwad ${SNAP}/boa.ipk3 -file lights.pk3 brightmaps.pk3 game_widescreen_gfx.pk3 -config ${GAMEDIR}/boa.conf -savedir ${GAMEDIR}

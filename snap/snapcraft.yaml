@@ -8,6 +8,9 @@ confinement: strict
 grade: stable
 compression: lzo
 
+architectures:
+  - build-on: amd64
+
 apps:
   boa:
     command: launcher
