@@ -1,6 +1,6 @@
 name: boa
 base: core20
-version: git
+version: "3.0"
 summary: Wolfenstein - Blade of Agony
 description: |
   A complete DOOM mod in the Wolfenstein style.
@@ -19,6 +19,9 @@ apps:
 
 parts:
   gzdoom:
+    # This is far from transparent, but as current version of gzdoom do not
+    # compile under current version of snapcraft, I need to fall back on a blob
+    # compiled, by me, elsewhere.
     plugin: dump
     source: gzdoom/gzdoom.tar.gz
     stage-packages:
@@ -63,4 +66,3 @@ parts:
       for snap in "core20" "gtk-common-themes" "gnome-3-38-2004"; do
         cd "/snap/$snap/current" && find . -type f,l -exec rm -r "$SNAPCRAFT_PRIME/{}" \;
       done
-
