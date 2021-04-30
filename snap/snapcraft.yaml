@@ -26,6 +26,7 @@ parts:
     source: gzdoom/gzdoom.tar.gz
     prime:
       - -lib/python3.8
+      - -share/fonts
     stage-packages:
       - libsdl2-2.0-0
       - zlib1g
