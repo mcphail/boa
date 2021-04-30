@@ -44,6 +44,7 @@ parts:
   mod:
     plugin: nil
     source: https://github.com/Realm667/WolfenDoom.git
+    source-tag: v3.0
     build-packages:
       - p7zip-full
     override-build: |
