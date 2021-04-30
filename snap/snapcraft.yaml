@@ -24,6 +24,8 @@ parts:
     # compiled, by me, elsewhere.
     plugin: dump
     source: gzdoom/gzdoom.tar.gz
+    prime:
+      - -lib/python3.8
     stage-packages:
       - libsdl2-2.0-0
       - zlib1g
