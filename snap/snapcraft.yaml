@@ -53,16 +53,3 @@ parts:
   launch:
     plugin: dump
     source: launcher
-
-  cleanup:
-    after: [launch, mod, gzdoom]
-    plugin: nil
-    build-snaps:
-      - core20
-      - gtk-common-themes
-      - gnome-3-38-2004
-    override-prime: |
-      set -eux
-      for snap in "core20" "gtk-common-themes" "gnome-3-38-2004"; do
-        cd "/snap/$snap/current" && find . -type f,l -exec rm -r "$SNAPCRAFT_PRIME/{}" \;
-      done
