@@ -1,6 +1,6 @@
 name: boa
 base: core20
-version: "3.0"
+version: "3.1"
 summary: Wolfenstein - Blade of Agony
 description: |
   A complete DOOM mod in the Wolfenstein style.
@@ -47,7 +47,7 @@ parts:
   mod:
     plugin: nil
     source: https://github.com/Realm667/WolfenDoom.git
-    source-tag: v3.0
+    source-tag: v3.1
     build-packages:
       - p7zip-full
     override-build: |
